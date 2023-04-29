@@ -12,11 +12,14 @@
 \usepackage{natbib}
 \usepackage{hyperref}
 
+\usepackage{glossaries}
+\loadglsentries{tex/acronyms}
+\makeglossaries{}
+
 \usepackage[useregional]{datetime2}
 \DTMlangsetup[en-GB]{ord=raise}
 
 \begin{document}
-
 \title{Placement Report}
 \author{Talha Abdulkuddus}
 
@@ -373,6 +376,7 @@ The student is able to express a well-formed argument through the report.
 The report is well structured, free of grammatical and typographical errors.
 A full set of references is included, and these are appropriately structured and formatted.
 
+\printglossaries{}
 \bibliographystyle{plainnat}
 \bibliography{report}
 
