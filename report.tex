@@ -1,5 +1,8 @@
 \documentclass[12pt,a4paper,twoside,openright]{report}
+
 \usepackage{graphicx}
+\graphicspath{{img/}}
+
 \usepackage{natbib}
 \usepackage{hyperref}
 \begin{document}
@@ -10,28 +13,7 @@
 \title{Report title}
 \author{Report Author}
 %
-\begin{titlepage}
-\vspace*{1mm}
-\begin{center}
-\Huge Placement Report
-\end{center}
-\addvspace{25mm}
-\begin{center}
-\LARGE Author Name
-\end{center}
-\addvspace{35mm}
-\begin{center}
-\includegraphics[width=40mm]{KCL-Logo.png}
-\end{center}
-\addvspace{28mm}
-\begin{center}
-\Large Position name\\
-%Computer Laboratory\\
-Organisation  name
-\end{center}
-\addvspace{15mm}
-\begin{center}\Large dates\end{center}
-\end{titlepage}
+\include{tex/title}
 \setcounter{page}{2} % titlepage otherwise forces following page to be 1
 \pagestyle{empty}
 \cleardoublepage
@@ -46,7 +28,7 @@ stated to the contrary.
 I grant permission for this report to be archived and circulated
 internally within King's College London, for academic purposes
 (e.g. instruction of future students).
-{\footnotesize (optional; delete if you do not consent)}\\
+    {\footnotesize (optional; delete if you do not consent)}\\
 
 \medskip
 
@@ -200,9 +182,9 @@ What went well? What didn't?
 What was useful from your prior studies?
 In what way did you use disciplinary knowledge in your work?
 What do you wish you knew at the beginning that you didn't?
-What will you do differently from now on in your studies? 
+What will you do differently from now on in your studies?
 
-Create some structure (section headings/subheadings) to present this section. 
+Create some structure (section headings/subheadings) to present this section.
 You should make precise points, rather than platitudes.
 Be comparative, and justify your views.
 The goal here is to critically evaluate your experience,
