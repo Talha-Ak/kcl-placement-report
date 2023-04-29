@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,latex
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,latex
 
+# Hide signature
+/img/signature.svg
+
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
 *.aux
