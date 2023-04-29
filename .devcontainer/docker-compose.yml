@@ -9,7 +9,7 @@ services:
       # Docker socket to access Docker server
       - /var/run/docker.sock:/var/run/docker.sock
       # SSH directory
-      - ~/.ssh:/root/.ssh
+      - $SSH_AUTH_SOCK:/ssh-agent
       # For Windows without WSL, a copy will be made
       # from /tmp/.ssh to ~/.ssh to fix permissions
       # - ~/.ssh:/tmp/.ssh:ro
@@ -19,5 +19,5 @@ services:
       - ~/.gitconfig:/root/.gitconfig
     environment:
       - TZ=
+      - SSH_AUTH_SOCK=/ssh-agent
     entrypoint: ["zsh", "-c", "while sleep 1000; do :; done"]
- 
