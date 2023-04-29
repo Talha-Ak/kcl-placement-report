@@ -1,0 +1,415 @@
+\documentclass[12pt,a4paper,twoside,openright]{report}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{hyperref}
+\begin{document}
+
+% Report template by Stephen Kell
+% based on one by Markus Kuhn at the University of Cambridge Computer Laboratory
+
+\title{Report title}
+\author{Report Author}
+%
+\begin{titlepage}
+\vspace*{1mm}
+\begin{center}
+\Huge Placement Report
+\end{center}
+\addvspace{25mm}
+\begin{center}
+\LARGE Author Name
+\end{center}
+\addvspace{35mm}
+\begin{center}
+\includegraphics[width=40mm]{KCL-Logo.png}
+\end{center}
+\addvspace{28mm}
+\begin{center}
+\Large Position name\\
+%Computer Laboratory\\
+Organisation  name
+\end{center}
+\addvspace{15mm}
+\begin{center}\Large dates\end{center}
+\end{titlepage}
+\setcounter{page}{2} % titlepage otherwise forces following page to be 1
+\pagestyle{empty}
+\cleardoublepage
+
+\vspace*{60mm}
+\section*{Originality avowal}
+\vspace{10mm}
+
+I verify that I am the sole author of this report, except where explicitly
+stated to the contrary.
+
+I grant permission for this report to be archived and circulated
+internally within King's College London, for academic purposes
+(e.g. instruction of future students).
+{\footnotesize (optional; delete if you do not consent)}\\
+
+\medskip
+
+Name\\
+
+\medskip
+
+Signature\\
+
+\bigskip
+
+\section*{Abstract}
+
+The abstract should be a concise summary of the entire document's contents.
+It should not be a duplicate of the introduction, but rather,
+should allow a relatively expert reader to appraise themselves quickly
+of what is included in the report,
+including the nature of its main content and conclusions.
+It should be roughly half a page in length.
+
+\cleardoublepage
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\chapter{Introduction}
+
+This document explains how to write a good report for your year in industry.
+It is available in multiple forms:
+\href{https://keats.kcl.ac.uk/course/view.php?id=75967&section=27}{HTML embedded on Keats},
+\href{https://nms.kcl.ac.uk/stephen.kell/yini/report-keats.html}{as a freestanding HTML page},
+as part of a \href{https://nms.kcl.ac.uk/stephen.kell/yini/report.pdf}{template report in PDF format}
+and in the \href{https://nms.kcl.ac.uk/stephen.kell/yini/reportsrc.zip}{LaTeX sources for that PDF}.
+If you're using Word or something similar,
+you can produce a complete template report
+by copying the HTML in your browser and pasting it onto the end of the provided
+\href{https://nms.kcl.ac.uk/stephen.kell/yini/report-word-frontmatter.docx}{Word template of front matter}.
+
+The report is your chance to demonstrate the understanding that you have gained as a result of your
+time on placement. That includes technical understanding, contextual understanding of that work's
+place in the world, and understanding the relationships between your academic work and your
+placement.
+
+The report is \emph{not} expected to convey every technical aspect of the project or projects undertaken.
+Its focus should be on your learning experience. However, the report is not a formality;
+simply being able to state that you have spent the time on placement, and that your managers were
+happy, does not amount to a successful placement year. The degree credit is awarded only if you can
+produce a report that demonstrates the understanding you have gained.
+
+Broadly, two different types of industrial placements can be distinguished. In one scenario, a
+student is assigned to a project, which starts when the student joins the company and runs for the
+entire time of the placement. In a more typical scenario, the student will experience a range of
+projects, some to completion, but others only partially. These two types of placements will result
+in a somewhat different report structure, but with a common outline, which is described in the next
+section.
+
+\sloppypar{} If you have any questions after reading this document, please do not hesitate to contact the
+Departmental academic Year in Industry tutor or the Faculty administrative Year in Industry
+coordinator (contact via \texttt{global-placements@kcl.ac.uk}).
+
+\chapter{Report structure}
+
+This section outlines how you should go about structuring your report.
+
+\section{Front matter}
+
+As already illustrated in this template, the report should start with a number of standard elements:
+a cover page, an `Originality Avowal', an abstract and a table of contents.
+
+The cover page should include general information including your name, student ID, your department,
+the name of the company where you were working, and the submission date.
+
+The first page after the cover page begins with some declarations by you as the author of the
+report. These must begin with the originality avowal as it appears in this template (see earlier).
+
+The second part of the avowal gives permission for King's to archive and circulate the report for
+academic purposes.
+You may delete it if you are unable or unwilling to grant this permission.
+In most cases we expect this will not pose a problem.
+If you are concerned by confidentiality issues, see \S\ref{sec:confidentiality} below.
+
+You must sign and date your declaration. You may use a digital image rather than a signature in ink.
+
+Next, the abstract provides a concise summary of the entire report.
+It should be about half a page long. See the template Abstract, earlier, for more guidance.
+
+The table of contents should list the section headings of the report, with page numbers.
+
+\section{The introduction}
+
+Describe the company you work in.
+How large is it?
+What is the nature of its business?
+What is its business model?
+How long has it been around?
+How well is it performing?
+Is there anything unusual or surprising about the company?
+How does it compare with what you expected going in?
+What did you hope to get out of the placement year?
+These are just examples of the questions you might choose to answer by way of introduction
+to the company.
+
+Next, say something about your role.
+What was it, in theory and in practice? (The two often differ.)
+How did it fit in with the organisation?
+Who did you work with? Did this change over time?
+How did it fit in with what you knew already?
+Did you get any training?
+If so, describe it.
+If you have a lot to say, especially about training or technical background,
+you should create a separate section, after the introduction, to cover this;
+in that case, you can just put a brief summary here and include a forward reference.
+
+More generally, it is good to conclude the introduction with an outline of what you will
+cover in the rest of the report.
+The following sub-headings are purely a suggestion for how
+you might structure what follows;
+feel free to vary them if you see a good reason to.
+
+\section{Projects and tasks}
+
+Write one or more sections describing some specific project(s) or task(s) you worked on.
+Be specific; provide detail.
+Remember: the readers of your report are familiar with your subject area---you can be technical,
+concrete and detailed.
+
+Avoid writing in jargon, either from your company or from the specific technology.
+As a rule of thumb, you should assume your reader has a degree in your discipline
+but has been out of the field for a while.
+That's not because your examiners have been out of the field, but for two reasons.
+Firstly, you are liable to misjudge what is common knowledge and what is obscure or ephemeral;
+you should err on the side of explaining something if you're not sure.
+Secondly, the report is your chance to show what you have understood.
+Explaining technical matters to a (hypothetical) unfamiliar peer
+is a great way to show that you have really understood them.
+
+Describe the context you worked in, and be careful to describe your own contribution
+and where it handed off to others.
+
+Critically evaluate your work: What was good? What could have been done better?
+
+If you worked on more than one project, this may well be several sections or subsections.
+
+\section{Reflections}
+
+What did you learn? Don't just make a list; evaluate!
+What was the most important thing you learned, and why?
+Was anything a waste of time, and if so, why?
+What went well? What didn't?
+What was useful from your prior studies?
+In what way did you use disciplinary knowledge in your work?
+What do you wish you knew at the beginning that you didn't?
+What will you do differently from now on in your studies? 
+
+Create some structure (section headings/subheadings) to present this section. 
+You should make precise points, rather than platitudes.
+Be comparative, and justify your views.
+The goal here is to critically evaluate your experience,
+including technical and social aspects.
+It's not a place to say simply that you had a nice time.
+Comment on what was good, what could have been better,
+and most importantly why you make those judgements.
+
+\section{Conclusion}
+
+End with a conclusion section that summarises the main points
+you wish the reader to take away from your report.
+A good conclusion is not simply a summary of what was previously
+covered, but also---the previous sections
+were all leading to this!---concisely states what has been learned
+from the experience being reported on.
+
+\chapter{Qualities of a good report}
+
+There is no fixed recipe for a good report.
+This template is itself not fixed:
+you are free to extend and modify the structure suggested here,
+to best serve what you want to say.
+However, certain qualities are common to all excellent reports.
+They cover the content we have been describing,
+and they generally follow the following advice.
+
+\section{Structure, content and form}
+
+Pay attention to spelling, grammar and readability.
+Good style matters. Every sentence should contain a verb!
+
+Strive to write in a clear and honest style.
+One timeless perspective on this issue is by \citet{orwell_politics_1946}.
+
+Do include figures (pictures, diagrams) when it helps to illustrate what you are presenting.
+Number and reference figures appropriately.
+
+Acknowledge your sources, particularly if figures (or any other material)
+are sourced from elsewhere.
+Use external references where appropriate,
+to substantiate your statements and connect your reader with further reading.
+You may use any bibliographic style (including footnotes, or references
+into a separate bibliography) but make your references as precise as you reasonably can.
+
+Consider using appendices.
+Material that may be interesting and relevant but too specific for the report itself
+can be presented in an appendix.
+For example, if you worked on a software project,
+specific details of the system may be too lengthy and low-level for the main body of the report.
+If they are relevant, put them in an appendix.
+However, be aware that your examiner might not read the appendices,
+so make sure that all truly important information
+is presented in the main body of the report.
+
+A good report does not simply state what you did; it must explain, evaluate, reflect,
+criticise, and synthesise. Make connections to what you knew before, what you think now, what you will do in future. Structure your experience, learn from it. Tell us what you learned.
+
+\section{Common mistakes}
+
+Reports which fail, or come close to failing, normally commit one or more of the following errors of judgement.
+
+\subsection{Being too short or too vague}
+
+The most common way to fail is simply to underestimate the task,
+delivering a thin report without the detail necessary to demonstrate understanding.
+
+\subsection{Naming but not explaining}
+
+Technical work is often dense with named products and technologies,
+often with abbreviations and initialisms. It is your job, as a report's author,
+to make this digestible and understandable to an outside reader.
+Naming things is not the same thing as explaining them.
+Show that you actually know what you are talking about,
+on a conceptual level not just a superficial one.
+
+\subsection{Being uncritical}
+
+`Critical' doesn't mean you have to be negative,
+but it does mean you have to be questioning,
+analytical, and offer reasoned comment.
+Some reports instead read like an advertisement for the company,
+or offer only a narrative of what was done but with no critical or analytical element.
+
+\subsection{Being unreadable}
+
+Poor grammar, careless wording and unstructured `walls of text' are all ways
+to leave your reader unable to discern the merits of whatever you were trying to say.
+Read back what you write, and try to take an outsider's point of view when you do so.
+Check that it can be understood.
+
+\chapter{Practicalities}
+
+The following notes will help you get your report submitted and marked.
+
+\section{Length}
+
+The report has a limit of 10,000 words (excluding front matter and appendices).
+It must be formatted for A4 paper, with a minimum 11pt font size and 2.5cm margins.
+Remember that the ability to express yourself concisely and clearly is an important
+skill, which is being assessed.
+The word limit is a limit, not a target.
+Most good reports are in the range 5,000--10,000 words,
+but occasionally are shorter if they are tightly written.
+
+\section{Submission and marking}
+
+The report may be submitted as soon as the placement has ended.
+All reports must be submitted no later than 31st October of the beginning of your fourth year
+of study.
+Earlier submission is encouraged where possible.
+
+Reports should normally be submitted electronically via KEATS.
+(See below if this presents a confidentiality problem.)
+
+Once submitted, reports will be marked independently by the Departmental Year in Industry
+tutor and one other academic.
+The moderated pass/fail results will normally become available according to the college guidelines
+on feedback deadlines for submitted coursework.
+You can expect to receive brief written comments about your submission.
+
+As part of the marking process, input from the placement company
+(that is, from the industry supervisor)
+may be taken into account if available.
+The student should make the industry supervisor aware that their written feedback is solicited.
+Any such industrial feedback should consist of a short report (approx.\ 1 page)
+including praise and criticism of the student's contribution.
+However, students should remember that the mark is given on the basis of the report,
+not directly on the basis of placement work or its appraisal.
+
+The industry placement is worth 30 credits at level 5; that is,
+it is equivalent to an additional two second-year modules.
+The pass/fail result obtained for the industry placement report
+does not contribute to the degree average.
+
+\section{Confidentiality}
+\label{sec:confidentiality}
+
+You may be under an obligation of confidentiality
+regarding some of the details of your placement projects,
+as these may concern trade secrets of your placement company.
+It is in your interest to be proactive about discovering
+and negotiating any confidentiality requirements.
+Confidentiality issues do not justify submitting a brief or vague report,
+and allowances will not be made for this during marking.
+Instead, the following approaches should be taken.
+
+The primary approach is to make the enquiries in the company
+about the level of allowed disclosure and any approval process that you must follow
+before submitting your report.
+It will usually be a good idea to ask your industry supervisor
+to approve the report before it is submitted to the Department.
+Plan ahead for submission: remember that
+you will have finished your placement at the point when you submit your report.
+Equally, you should not hold back from making contact
+(most likely by e-mail) even after you have left, if you need further guidance
+on what and how you have clearance to submit.
+
+A secondary approach, if required, is to set the technical content of your report
+in a somewhat hypothetical framework.
+For example, if you used a particular technology but cannot explain exactly how or
+for what purposes,
+you could gain credit by explaining and describing the same technology in some other,
+hypothetical scenario.
+It is better to take this approach only if the company will not agree to other courses of action.
+
+We can offer companies considerable flexibility in how reports are submitted.
+For example, in some (very rare) cases, the company may not allow submission of a
+report electronically on KEATS. In such cases we can arrange for you to e-mail your report
+to the academic coordinator directly, or (failing that) send a paper copy to the department,
+with instructions for it to be returned or destroyed after marking (as appropriate).
+If needed, the markers could possibly sign a non-disclosure agreement,
+although this is expected to be rare.
+Overall, it is better to restrict the report's distribution than to compromise its contents.
+
+\section{Marking criteria}
+
+The report is marked pass/fail on four criteria,
+weighted approximately as shown when arriving at the overall pass/fail mark.
+
+\paragraph{Introduction and overview (10\%)}
+The report clearly and concisely describes the company/organisation in which the student worked.
+
+\paragraph{Technical details (30\%)}
+The report clearly describes the student's role and initial expectations of it.
+It demonstrates a clear analysis of the problems addressed throughout the placement
+(for example, as part of the individual project(s) pursued by the student).
+There is clear evidence of the student transferring disciplinary knowledge
+to the problem at hand and of selecting and devising appropriate strategies.
+
+\paragraph{Critical analysis and transferable skills (40\%)}
+The report reflects on all elements of the student's learning experience,
+including technical and social aspects, and provides a critical analysis and suggestions
+for improvement.
+
+\paragraph{Conclusions (10\%)}
+The report includes a conclusion section that
+summarises the main points in the report
+and provides an overall self-evaluation of the student's placement experience.
+
+\paragraph{General scholarship (10\%)}
+The writing is clear, coherent, and free of repetition.
+The student is able to express a well-formed argument through the report.
+The report is well structured, free of grammatical and typographical errors.
+A full set of references is included, and these are appropriately structured and formatted.
+
+\bibliographystyle{plainnat}
+\bibliography{report}
+
+\end{document}
