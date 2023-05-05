@@ -1,27 +1,19 @@
 {
     "name": "LaTeX",
-    "dockerComposeFile": [ "docker-compose.yml" ],
-    "service": "vscode",
-    "runServices": [ "vscode" ],
-    "shutdownAction": "stopCompose",
-    "workspaceFolder": "/workspace",
-    "postCreateCommand": "",
+    "build": { "dockerfile": "Dockerfile" },
     "customizations": {
         "vscode": {
             "extensions": [
-				"james-yu.latex-workshop",
-				"eamodio.gitlens",
-				"shardulm94.trailing-spaces",
-				"stkb.rewrap",
-				"vscode-icons-team.vscode-icons",
-				"valentjn.vscode-ltex"
-			],
+                "james-yu.latex-workshop",
+                "shardulm94.trailing-spaces",
+                "valentjn.vscode-ltex"
+            ],
             "settings": {
-                // General settings
-                "files.eol": "\n",
-                // Latex settings
                 "latex-workshop.linting.chktex.enabled": true,
                 "latex-workshop.linting.chktex.exec.path": "chktex",
+                "latex-workshop.synctex.afterBuild.enabled": true,
+                "latex-workshop.view.pdf.viewer": "tab",
+                "latex-workshop.latex.clean.subfolder.enabled": true,
                 "latex-workshop.linting.chktex.exec.args": [
                     "-wall",
                     "-n22",
@@ -30,37 +22,9 @@
                     "-e16",
                     "-q"
                 ],
-                "latex-workshop.latex.clean.subfolder.enabled": true,
                 "latex-workshop.latex.autoClean.run": "onBuilt",
-                "latex-workshop.latex.tools": [
-                    {
-                        "name": "latexmk",
-                        "command": "latexmk",
-                        "args": [
-                            "-shell-escape",
-                            "-synctex=1",
-                            "-interaction=nonstopmode",
-                            "-file-line-error",
-                            "-pdf",
-                            "-outdir=%OUTDIR%",
-                            "%DOC%"
-                        ]
-                    }
-                ],
                 "editor.formatOnSave": true,
-                "files.associations": {
-                    "*.tex": "latex"
-                },
-                "workbench.editorAssociations": {
-                    "*.pdf": "latex-workshop-pdf-hook"
-                },
-                "latex-workshop.latexindent.path": "latexindent",
-                "latex-workshop.latexindent.args": [
-                    "-c",
-                    "%DIR%/",
-                    "%TMPFILE%",
-                    "-y=defaultIndent: '%INDENT%'"
-                ]
+                "latex-workshop.latex.pdfWatch.delay": 500
             }
         }
     }
