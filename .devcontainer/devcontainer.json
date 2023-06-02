@@ -24,8 +24,9 @@
                     "-q"
                 ],
                 "latex-workshop.latex.autoClean.run": "onBuilt",
+                "latex-workshop.latex.pdfWatch.delay": 500,
                 "editor.formatOnSave": true,
-                "latex-workshop.latex.pdfWatch.delay": 500
+                "editor.rulers": [ 100 ]
             }
         }
     }
