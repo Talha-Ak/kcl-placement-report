@@ -6,10 +6,16 @@
 \documentclass[british,12pt,a4paper]{report}
 \usepackage{babel}
 \usepackage{csquotes}
+\usepackage[useregional]{datetime2}
+\DTMlangsetup[en-GB]{ord=raise}
+
+% Graphics
+\usepackage{graphicx}
+\usepackage{svg}
+\graphicspath{{img/}}
 
 % Links
 \usepackage[pdfusetitle,hidelinks]{hyperref}
-\usepackage{xcolor}
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
@@ -17,20 +23,13 @@
     urlcolor={blue!80!black}
 }
 
-% Graphics
-\usepackage{graphicx}
-\usepackage{svg}
-\graphicspath{{img/}}
-
 % Citations/Glossary
 \usepackage{biblatex}
 \addbibresource{report.bib}
-\usepackage{glossaries}
+\usepackage[toc,nonumberlist]{glossaries-extra}
+\glsdisablehyper
 \makeglossaries
 \loadglsentries{tex/acronyms}
-
-\usepackage[useregional]{datetime2}
-\DTMlangsetup[en-GB]{ord=raise}
 
 \begin{document}
 \title{Placement Report}
@@ -81,6 +80,8 @@ It should be roughly half a page in length.
 % \listoftables
 
 \include{tex/intro}
+
+\include{tex/projects}
 
 \chapter{Report structure}
 
