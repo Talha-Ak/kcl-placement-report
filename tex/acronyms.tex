@@ -1,16 +1,68 @@
-\newabbreviation{iot}{IoT}{Internet of Things}
-\newabbreviation{ai}{AI}{Artificial Intelligence}
+% Command to create a glossary entry with correspondent acronym.
+% Args : 1: label, 2: short name, 3: long name, 4: description
+\newcommand{\newglossaryentrywithacronym}[4]{
+    % The glossary entry the acronym links to
+    \newglossaryentry{#1_gls}{
+        name={#3},
+        description={#4}
+    }
 
-\newabbreviation[
-    name={\glsxtrfull{ml}},
-    description={the ability for computers to solve problems
-            autonomously rather than being explicitly programmed}
-]{ml}{ML}{Machine Learning}
+    % Acronym pointing to glossary
+    \newglossaryentry{#1}{
+        type=\acronymtype,
+        name={#2},
+        description={#3},
+        first={#3 (#2)\glsadd{#1_gls}},
+        see=[Glossary:]{#1_gls}
+    }
+}
 
-\newabbreviation[
-    name={\glsxtrfull{rl}},
-    description={a paradigm of machine learning where
-            an agent is able to autonomously perform actions based on states that maximises
-            a reward signal given}
-]{rl}{RL}{Reinforcement Learning}
+\newacronym{iot}{IoT}{Internet of Things}
+\newacronym{ai}{AI}{Artificial Intelligence}
+\newacronym{gpu}{GPU}{Graphical Processing Unit}
 
+\newglossaryentrywithacronym{ml}{ML}{Machine Learning}{the ability for autonomous agents to solve
+    problems autonomously rather than being explicitly programmed}
+
+\newglossaryentrywithacronym{rl}{RL}{Reinforcement Learning}{a paradigm of machine learning where an
+    agent is able to autonomously perform actions based on states that maximises a reward signal}
+
+\newglossaryentry{euclidean}{
+    name={Euclidean data},
+    description={data that is mathematically represented as being in a flat space}
+}
+
+\newglossaryentry{noneuclidean}{
+    name={non-Euclidean data},
+    description={data that is mathematically represented as being in a curved space}
+}
+
+\newglossaryentry{pytorch}{
+    name={PyTorch},
+    description={a Python-based machine learning framework}
+}
+
+\newglossaryentry{stablebaselines}{
+    name={Stable-Baselines3},
+    description={a library of reliable and tested reinforcement learning algorithm implementations}
+}
+
+\newglossaryentry{gympython}{
+    name={Gym (Python Library)},
+    description={a library standardizing communication between algorithms and environments}
+}
+
+\newglossaryentry{matplotlib}{
+    name={Matplotlib},
+    description={a data plotting and visualization library}
+}
+
+\newglossaryentry{inkscape}{
+    name={Inkscape},
+    description={a vector graphics editor}
+}
+
+\newglossaryentry{pandaspython}{
+    name={Pandas (Python Library)},
+    description={a library for importing and manipulating collections of data}
+}

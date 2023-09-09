@@ -16,6 +16,7 @@
 
 % Links
 \usepackage[pdfusetitle,hidelinks]{hyperref}
+\usepackage[all]{hypcap} % Fix caption ref links
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
@@ -24,12 +25,14 @@
 }
 
 % Citations/Glossary
-\usepackage{biblatex}
+\usepackage[style=authoryear]{biblatex}
 \addbibresource{report.bib}
-\usepackage[toc,nonumberlist]{glossaries-extra}
-\glsdisablehyper
+\usepackage[acronym]{glossaries}
 \makeglossaries
 \loadglsentries{tex/acronyms}
+\newcommand{\acro}[1]{\gls*{#1}}
+\newcommand{\acrolong}[1]{\acrlong*{#1}}
+\newcommand{\acrodesc}[1]{\glsdesc*{#1_gls}}
 
 \begin{document}
 \title{Placement Report}
@@ -44,10 +47,6 @@
 
 I verify that I am the sole author of this report, except where explicitly
 stated to the contrary.
-
-I grant permission for this report to be archived and circulated
-internally within King's College London, for academic purposes
-(e.g.\ instruction of future students).
 
 \bigskip
 
@@ -76,7 +75,7 @@ It should be roughly half a page in length.
 \vfill
 
 \tableofcontents
-% \listoffigures
+\listoffigures
 % \listoftables
 
 \include{tex/intro}
@@ -384,7 +383,8 @@ The student is able to express a well-formed argument through the report.
 The report is well structured, free of grammatical and typographical errors.
 A full set of references is included, and these are appropriately structured and formatted.
 
-\printglossaries
+\printglossary[type=\acronymtype]
+\printglossary[type=main]
 \printbibliography
 
 \end{document}
