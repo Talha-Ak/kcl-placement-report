@@ -17,5 +17,8 @@ RUN tlmgr install \
     # svg + deps
     svg koma-script trimspaces xcolor transparent pgf catchfile \
     csquotes datetime2 datetime2-english \
+    # glossaries
     biblatex biber glossaries glossaries-extra glossaries-english \
+    # other
+    subcaption \
     && texhash

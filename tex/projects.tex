@@ -114,6 +114,98 @@ paper.
 
 \section{Robot Manipulation Library}
 
+As the company was moving towards in-house software solutions for robotic software control, I was
+tasked to assist in developing a C++ manipulation library using the
+\acro{ros}\footnote{Counter-intuitively, \acro{ros} is \emph{not} an operating system in the
+    traditional sense.}, \acrodesc{ros}, and \gls*{tesseract}, \glsdesc*{tesseract}.
+
+The purpose of the task was to assess whether \gls*{tesseract} could be a viable alternative
+compared to another popular planning framework, MoveIt. In comparison to MoveIt which is heavily
+dependent on \acro{ros}, \gls*{tesseract} was \enquote{designed to be light weight, limiting the
+    number of dependencies, mainly only using standard [C++] libraries} \autocite{tesseractgithub}. If
+possible to migrate to \gls*{tesseract}, the tight coupling and dependencies on \acro{ros} can be
+significantly reduced. \gls*{tesseract} also holds other advantages over MoveIt, boasting the
+ability to support dynamic reconfigurations at runtime.
+
+The details of the task involved the creation of a library that could execute motion using
+waypoints, and motion via real-time teleoperation (teleop), working in both cartesian space
+(specifying a robot's end-effector in 3D coordinates) and joint space (specifying all of a robot's
+joint orientations). The library also considered appropriately stopping motion when a joint limit is
+reached, while being adaptable to any generic robot arm.
+
+To become comfortable programming with \acro{ros}, I worked on understanding the C++ tooling I would
+be using (including build tools such as CMake and \acro{ros}-specific tools like \texttt{catkin}) as
+well as going through several tutorials focusing on communication with simulated robots via
+different methods, such as request-response and unidirectional observation data flows. I also tested
+the trajectory controller (middleware to issue commands to robots) that I would end up using with
+the library. The trajectory controller exposes a \enquote{goal} endpoint that accepts a trajectory
+of joint positions across time. Once a goal is forwarded to the robot, the controller returns
+several "feedback" states that correspond to the current progress of the action execution,
+completing the action with a "result" state that indicates success or error.
+
+Work on combining Tesseract and ROS began once I felt confident building on top of ROS. One major
+hurdle with Tesseract is the notable lack of up-to-date documentation in the Tesseract project, from
+installation to implementation. To aid in understanding, I began to document these processes in
+order to aid myself and others. I also created a diagram illustrating the high-level details the
+project required, highlighting areas needed to be implemented and areas that could depend on
+Tesseract or ROS code.
+
+By documenting my actions, I began to better appreciate the more well-documented code I've seen -
+something I had previously took for granted. Many hours of frustration and debugging could have been
+mitigated had basic documentation been available. Following this, efforts have been made to actively
+document all aspects of my work, including personal projects.
+
+As Tesseract is only a framework for motion planning, a planning algorithm still needed to be
+selected for usage. My colleagues and I evaluated several different algorithm implementations
+(primary ones being TrajOpt, OMPL, and Descartes). For each, we outlined the benefits and drawbacks
+of each approach along with an evaluation of practical performance. For instance, the Descartes
+planner is restricted to planning in Cartesian space, unlike the other planners available. TrajOpt
+was notable in its ability to not only produce reliable trajectories under complex constraints, but
+also in its ability to have initial conditions be seeded by other planners, providing more robust
+solutions. Usage of TrajOpt also allowed for both joint space and Cartesian planning, as specific
+constraints could be supplied to the algorithm depending on the type of motion required. TrajOpt was
+therefore selected as the default planning algorithm, although it should be noted that Tesseract
+supported the ability to change planners at runtime if a certain task was more suited towards
+another planner.
+
+I was also responsible for the implementation of real-time teleop in the library. While the
+implementation of joint space teleop was relatively simple (adjusting the position value of a single
+joint in response to user input), it was quite difficult to perform realtime Cartesian teleop as
+moving along a line/axis involves the movement of all joints in a non-intuitive manner. My approach
+to this problem was to use inverse kinematics (usage of kinematic equations to calculate joint
+positions in order to reach a given end-effector position) to formulate a trajectory along a given
+axis. Additionally, after searching through the Tesseract library code, I was able to apply
+Tesseract's post-processing abilities onto my trajectory, ensuring a collision free trajectory and
+allowing joint velocity values to be generated along side the IK positions. These were tested
+vigorously by myself as well as others in simulation software (Gazebo) as well as on a physical
+robot arm.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.4\linewidth]{robot-tui}
+        \caption{A subfigure}
+        \label{fig:sub1}
+    \end{subfigure}%
+    \begin{subfigure}{.5\textwidth}
+        \centering
+        \includegraphics[width=.4\linewidth]{robot-gui}
+        \caption{A subfigure}
+        \label{fig:sub2}
+    \end{subfigure}
+    \caption{A figure with two subfigures}
+    \label{fig:test}
+\end{figure}
+
+During this project I realized how imperative testing is in these safety-critical situations, as
+numerous fail-safes - some of which I triggered - were put in place to prevent unexpected or
+dangerous movement when running my teleop code on the physical arm. This ranged from software
+measures to avoid self-collision and halt movement before irregular velocities or positions were
+reached, as well as physical measures such as having more than one person observing the robot.
+Coming from a background of no robotics or embedded software development, this was an aspect of
+software I had never encountered before and taught me how different testing can be.
+
 \section{Other projects}
 
 \subsection{Task Management Web Application}
