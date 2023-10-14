@@ -20,5 +20,5 @@ RUN tlmgr install \
     # glossaries
     biblatex biber glossaries glossaries-extra glossaries-english \
     # other
-    subcaption \
+    texcount microtype \
     && texhash
