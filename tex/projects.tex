@@ -254,6 +254,13 @@ application. While development of these features were straightforward, it was pa
 challenging to prioritise changes that at times even conflicted with one another, requiring the need
 to create diagrams and mock-ups for clarifying details.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{website-overview}
+    \caption{Overview of all top-level groups and tasks, each including its aggregate
+        progress.\label{fig:website-overview}}
+\end{figure}
+
 One notable non-trivial change that was requested was the ability to create groups that could
 contain subgroups and tasks (Fig.~\ref{fig:website-overview}), akin to directories containing
 subdirectories and files in an operating system's hierarchical file system. This involved modifying
@@ -267,13 +274,6 @@ in queries, such as adding a \enquote{path} of groups to a task and storing the 
 of a group in the database rather than computing at runtime. This time-memory trade-off allowed for
 significantly faster navigation between groups without the time penalty of querying down the task
 tree.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{website-overview}
-    \caption{Overview of all top-level groups and tasks, each including its aggregate
-        progress.\label{fig:website-overview}}
-\end{figure}
 
 This project gave me an insight into the full software development process, from eliciting
 requirements and features to deploying to users. It educated me on the skills necessary to decipher
